@@ -33,21 +33,16 @@
 		2C5CCD10FECBDFA9A17698CB /* Pods-CPDialRing_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPDialRing_Example.release.xcconfig"; path = "Target Support Files/Pods-CPDialRing_Example/Pods-CPDialRing_Example.release.xcconfig"; sourceTree = "<group>"; };
 		31CCA85717A398F7111B0F62 /* Pods-CPDialRing_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPDialRing_Example.debug.xcconfig"; path = "Target Support Files/Pods-CPDialRing_Example/Pods-CPDialRing_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* CPDialRing_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPDialRing_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* CPDialRing_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPDialRing_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7377121D2BC2A0C700B20FC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CPDialRing/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		737712202BC2A0D200B20FC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = CPDialRing/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		737712222BC2A0DD00B20FC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CPDialRing/Images.xcassets; sourceTree = "<group>"; };
-		737712242BC2A0FC00B20FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CPDialRing/AppDelegate.swift; sourceTree = "<group>"; };
-		737712262BC2A10200B20FC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = CPDialRing/ViewController.swift; sourceTree = "<group>"; };
-		84F6E58FDFD33A78461C6EBB /* CPDialRing.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CPDialRing.podspec; path = ../CPDialRing.podspec; sourceTree = "<group>"; };
+		737712222BC2A0DD00B20FC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		737712242BC2A0FC00B20FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		737712262BC2A10200B20FC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		737712282BC2A18100B20FC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = CPDialRing/Info.plist; sourceTree = SOURCE_ROOT; };
+		84F6E58FDFD33A78461C6EBB /* CPDialRing.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CPDialRing.podspec; path = ../CPDialRing.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D47E41CBAA36D8F452A419A /* Pods-CPDialRing_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPDialRing_Tests.release.xcconfig"; path = "Target Support Files/Pods-CPDialRing_Tests/Pods-CPDialRing_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A28B108B92DE835AAEBEF162 /* Pods_CPDialRing_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPDialRing_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11C13127F03A82FC52E194D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -88,11 +83,6 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				737712262BC2A10200B20FC2 /* ViewController.swift */,
-				737712242BC2A0FC00B20FC2 /* AppDelegate.swift */,
-				737712222BC2A0DD00B20FC2 /* Images.xcassets */,
-				7377121F2BC2A0D200B20FC2 /* LaunchScreen.xib */,
-				7377121C2BC2A0C700B20FC2 /* Main.storyboard */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for CPDialRing */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -114,11 +104,11 @@
 		607FACD21AFB9204008FA782 /* Example for CPDialRing */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				7377121C2BC2A0C700B20FC2 /* Main.storyboard */,
+				7377121F2BC2A0D200B20FC2 /* LaunchScreen.xib */,
+				737712262BC2A10200B20FC2 /* ViewController.swift */,
+				737712242BC2A0FC00B20FC2 /* AppDelegate.swift */,
+				737712222BC2A0DD00B20FC2 /* Images.xcassets */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for CPDialRing";
@@ -128,7 +118,7 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD41AFB9204008FA782 /* Info.plist */,
+				737712282BC2A18100B20FC2 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -393,22 +383,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 		7377121C2BC2A0C700B20FC2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
