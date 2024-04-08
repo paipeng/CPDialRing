@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CPDialRing
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var dialRing: CPDialRing!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
