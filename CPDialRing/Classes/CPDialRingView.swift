@@ -11,10 +11,10 @@ class CPDialRingView: UIView {
     weak var delegate: CPDialRingDelegate? = nil
     
     var lastPoint = CGPoint.zero
-    var swiped = false
+    var hide = true
     var image: UIImage?
     var focusRing: CGFloat = 0
-    var focus: CGFloat = 0
+    var rotate: CGFloat = 0
     var focusRingView: UIImageView?
     
     // for using in code
@@ -31,6 +31,14 @@ class CPDialRingView: UIView {
     
     private func initView() {
         print("initView: \(self.frame)")
+        
+        // Double Tap
+        let doubleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CPDialRingView.handleDoubleTap))
+        doubleTap.numberOfTapsRequired = 2
+        self.addGestureRecognizer(doubleTap)
+
+        doubleTap.delaysTouchesBegan = true
+        
         //imageView.backgroundColor = UIColor.yellow
         /*
         let bundle = Bundle(for: CPDialRingView.self)
@@ -45,6 +53,12 @@ class CPDialRingView: UIView {
          */
     }
     
+    @objc func handleDoubleTap() {
+        print("Double Tap!")
+        hide = !hide
+        setNeedsDisplay()
+    }
+    
     public func setImage(image: UIImage) {
         print("setImage: \(image.size.width)-\(image.size.height)")
         self.image = image
@@ -56,18 +70,18 @@ class CPDialRingView: UIView {
         guard let touch = touches.first else {
             return
         }
-        swiped = false
+        //hide = false
         lastPoint = touch.location(in: self)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //print("touchesMoved")
+        print("touchesMoved")
         guard let touch = touches.first else {
             return
         }
 
         // 6
-        swiped = true
+        //hide = true
         let currentPoint = touch.location(in: self)
         focusRing = currentPoint.x - lastPoint.x
         //drawLine(from: lastPoint, to: currentPoint)
@@ -75,7 +89,7 @@ class CPDialRingView: UIView {
         if (focusRing != 0) {
             // 7
             lastPoint = currentPoint
-            focus += focusRing
+            rotate += focusRing
             setNeedsDisplay()
             
         }
@@ -83,7 +97,7 @@ class CPDialRingView: UIView {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touchesEnded")
-        if !swiped {
+        if !hide {
         // draw a single point
         //drawLine(from: lastPoint, to: lastPoint)
         }
@@ -92,6 +106,8 @@ class CPDialRingView: UIView {
         }
         let currentPoint = touch.location(in: self)
         lastPoint = currentPoint
+        //hide = true
+        //setNeedsDisplay()
         
       /*
       // Merge tempImageView into mainImageView
@@ -116,18 +132,16 @@ class CPDialRingView: UIView {
         // Drawing code
         ringRect.size.width = ringRect.size.height * self.image!.size.width / self.image!.size.height
 
-        if (focus > 0) {
-            focus = 0
-        } else if (focus < -(ringRect.size.width-self.frame.width)) {
-            focus = -(ringRect.size.width-self.frame.width)
+        if (hide) {
+            ringRect.origin.x = 50//ringRect.size.width - (self.image?.size.width)!
         }
-        ringRect.origin.x = focus
         
-        self.image!.draw(in: ringRect)
+        var rotateImage = self.image?.imageRotated(radians: rotate/M_PI)
         
-
+        rotateImage!.draw(in: ringRect)
+        
         if (self.delegate != nil) {
-            self.delegate?.speed(shutterSpeed: focus)
+            self.delegate?.speed(shutterSpeed: rotate)
         }
     }
     

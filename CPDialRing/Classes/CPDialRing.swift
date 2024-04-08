@@ -23,7 +23,6 @@ public class CPDialRing: UIView {
     
     private func initView() {
         let bundle = Bundle(for: CPDialRing.self)
-        
         let image = UIImage(named: "dialring_mask", in: bundle, compatibleWith: nil)!
         
         dialRingView = CPDialRingView(frame: CGRectMake(0, 0, 100, 100))
