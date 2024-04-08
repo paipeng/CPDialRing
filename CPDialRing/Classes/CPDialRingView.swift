@@ -83,9 +83,14 @@ class CPDialRingView: UIView {
         // 6
         //hide = true
         let currentPoint = touch.location(in: self)
-        focusRing = currentPoint.x - lastPoint.x
+        focusRing = sqrt( (currentPoint.x - lastPoint.x) * (currentPoint.x - lastPoint.x) + (currentPoint.y - lastPoint.y) * (currentPoint.y - lastPoint.y))
         //drawLine(from: lastPoint, to: currentPoint)
 
+        if ((currentPoint.x - lastPoint.x) < 0) {
+            focusRing = -focusRing
+        } else if ((currentPoint.y - lastPoint.y) < 0) {
+            focusRing = -focusRing
+        }
         if (focusRing != 0) {
             // 7
             lastPoint = currentPoint
@@ -135,8 +140,12 @@ class CPDialRingView: UIView {
         if (hide) {
             ringRect.origin.x = 50//ringRect.size.width - (self.image?.size.width)!
         }
+        let step = Double.pi/9
+        let r = rotate/Double.pi - (rotate/Double.pi).truncatingRemainder(dividingBy: step)
         
-        var rotateImage = self.image?.imageRotated(radians: rotate/M_PI)
+        
+        
+        let rotateImage = self.image?.imageRotated(radians: r)
         
         rotateImage!.draw(in: ringRect)
         
