@@ -158,7 +158,7 @@ class CPDialRingView: UIView {
         rotateImage!.draw(in: ringRect)
         
         if (self.delegate != nil) {
-            self.delegate?.speed(shutterSpeed: rotate)
+            self.delegate?.speed(shutterSpeed: s)
         }
     }
     
