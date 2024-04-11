@@ -75,7 +75,6 @@ class CPDialRingView: UIView {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touchesMoved")
         guard let touch = touches.first else {
             return
         }
@@ -83,15 +82,24 @@ class CPDialRingView: UIView {
         // 6
         //hide = true
         let currentPoint = touch.location(in: self)
-        dialRing = sqrt( (currentPoint.x - lastPoint.x) * (currentPoint.x - lastPoint.x) + (currentPoint.y - lastPoint.y) * (currentPoint.y - lastPoint.y))
+        print("touchesMoved: \(currentPoint) - \(lastPoint)")
+        
+                
+        dialRing = abs((currentPoint.y - lastPoint.y))
         //drawLine(from: lastPoint, to: currentPoint)
-        dialRing = dialRing / 1.5
-        if ((currentPoint.x - lastPoint.x) < 0) {
-            dialRing = -dialRing
-        } else if ((currentPoint.y - lastPoint.y) >= 0) {
-            dialRing = -dialRing
+        //dialRing = dialRing / 1.5
+        if (currentPoint.x <= self.frame.size.width/2) {
+            if ((currentPoint.y - lastPoint.y) >= 0) {
+                dialRing = -dialRing
+            }
+        } else {
+            if ((currentPoint.y - lastPoint.y) < 0) {
+                dialRing = -dialRing
+            }
         }
-        if (dialRing != 0) {
+        print("dialRing: \(dialRing/Double.pi) \(Double.pi/9)")
+        
+        if (dialRing != 0 && abs(dialRing/Double.pi) > Double.pi/9) {
             // 7
             lastPoint = currentPoint
             rotate += dialRing
@@ -111,26 +119,10 @@ class CPDialRingView: UIView {
         }
         let currentPoint = touch.location(in: self)
         lastPoint = currentPoint
-        //hide = true
-        //setNeedsDisplay()
-        
-      /*
-      // Merge tempImageView into mainImageView
-      UIGraphicsBeginImageContext(mainImageView.frame.size)
-      mainImageView.image?.draw(in: view.bounds, blendMode: .normal, alpha: 1.0)
-      tempImageView?.image?.draw(in: view.bounds, blendMode: .normal, alpha: opacity)
-      mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
-      UIGraphicsEndImageContext()
-        
-      tempImageView.image = nil
-       */
     }
-    
-    
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
         var ringRect: CGRect = rect
         //print("function draw is called: \(focus) \(ringRect.size.height * self.image!.size.width / self.image!.size.height)")
 
@@ -145,6 +137,7 @@ class CPDialRingView: UIView {
         var s = r/(Double.pi/9)
         
         print("speed: \(s)")
+        
         if (s > 3) {
             s = 3
         } else if (s < -11) {
