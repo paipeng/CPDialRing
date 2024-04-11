@@ -9,19 +9,24 @@ import UIKit
 
 public class CPDialRing: UIView {
     var dialRingView: CPDialRingView?
+
+    public init(frame: CGRect, shutterSpeed: CGFloat) {
+        super.init(frame: frame)
+        self.initView(shutterSpeed: shutterSpeed)
+    }
     // for using in code
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.initView()
+        self.initView(shutterSpeed: 1)
     }
     
     // for using in IB
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.initView()
+        self.initView(shutterSpeed: 1)
     }
     
-    private func initView() {
+    private func initView(shutterSpeed: CGFloat) {
         let bundle = Bundle(for: CPDialRing.self)
         let image = UIImage(named: "dialring_mask", in: bundle, compatibleWith: nil)!
         
@@ -33,23 +38,17 @@ public class CPDialRing: UIView {
         
         
         
-        //Text Label
-        let textLabel = UILabel()
-        textLabel.backgroundColor = UIColor.yellow
-        textLabel.widthAnchor.constraint(equalToConstant: self.frame.width).isActive = true
-        textLabel.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
-        textLabel.text  = "Hi World"
-        textLabel.textAlignment = .center
+        
 
         //Stack View
         let stackView   = UIStackView()
         stackView.axis  = NSLayoutConstraint.Axis.vertical
         stackView.distribution  = UIStackView.Distribution.equalSpacing
         stackView.alignment = UIStackView.Alignment.center
-        stackView.spacing   = 16.0
+        //stackView.spacing   = 16.0
 
         stackView.addArrangedSubview(dialRingView!)
-        stackView.addArrangedSubview(textLabel)
+        //stackView.addArrangedSubview(textLabel)
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
         self.addSubview(stackView)
@@ -59,5 +58,9 @@ public class CPDialRing: UIView {
         stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
         self.backgroundColor = .blue
+    }
+    
+    open func setDelegate(delegate: CPDialRingDelegate) {
+        self.dialRingView!.delegate = delegate
     }
 }

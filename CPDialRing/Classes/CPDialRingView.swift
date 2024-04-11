@@ -13,9 +13,9 @@ class CPDialRingView: UIView {
     var lastPoint = CGPoint.zero
     var hide = true
     var image: UIImage?
-    var focusRing: CGFloat = 0
+    var dialRing: CGFloat = 0
     var rotate: CGFloat = 0
-    var focusRingView: UIImageView?
+    var dialRingView: UIImageView?
     
     // for using in code
     override init(frame: CGRect) {
@@ -83,18 +83,18 @@ class CPDialRingView: UIView {
         // 6
         //hide = true
         let currentPoint = touch.location(in: self)
-        focusRing = sqrt( (currentPoint.x - lastPoint.x) * (currentPoint.x - lastPoint.x) + (currentPoint.y - lastPoint.y) * (currentPoint.y - lastPoint.y))
+        dialRing = sqrt( (currentPoint.x - lastPoint.x) * (currentPoint.x - lastPoint.x) + (currentPoint.y - lastPoint.y) * (currentPoint.y - lastPoint.y))
         //drawLine(from: lastPoint, to: currentPoint)
-        focusRing = focusRing / 1.5
+        dialRing = dialRing / 1.5
         if ((currentPoint.x - lastPoint.x) < 0) {
-            focusRing = -focusRing
+            dialRing = -dialRing
         } else if ((currentPoint.y - lastPoint.y) >= 0) {
-            focusRing = -focusRing
+            dialRing = -dialRing
         }
-        if (focusRing != 0) {
+        if (dialRing != 0) {
             // 7
             lastPoint = currentPoint
-            rotate += focusRing
+            rotate += dialRing
             setNeedsDisplay()
             
         }
