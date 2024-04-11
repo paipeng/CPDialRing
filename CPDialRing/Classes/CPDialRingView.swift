@@ -151,7 +151,42 @@ class CPDialRingView: UIView {
         rotateImage!.draw(in: ringRect)
         
         if (self.delegate != nil) {
-            self.delegate?.speed(shutterSpeed: s)
+            var shutterSpeed:CGFloat = 0 // Auto
+            switch s {
+            case 3:
+                shutterSpeed = 0
+            case 2:
+                shutterSpeed = 4000
+            case 1:
+                shutterSpeed = 2000
+            case 0:
+                shutterSpeed = 2000
+            case -1:
+                shutterSpeed = 500
+            case -2:
+                shutterSpeed = 250
+            case -3:
+                shutterSpeed = 125
+            case -4:
+                shutterSpeed = 60
+            case -5:
+                shutterSpeed = 30
+            case -6:
+                shutterSpeed = 15
+            case -7:
+                shutterSpeed = 8
+            case -8:
+                shutterSpeed = 4
+            case -9:
+                shutterSpeed = 2
+            case -10:
+                shutterSpeed = 1
+            case -11:
+                shutterSpeed = -1
+            default:
+                shutterSpeed = 0
+            }
+            self.delegate?.speed(shutterSpeed: shutterSpeed)
         }
     }
     
