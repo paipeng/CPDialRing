@@ -42,7 +42,7 @@ public class CPDialRing: UIView {
         dialRingView = CPDialRingView(frame: CGRectMake(0, 0, 100, 100))
         dialRingView!.widthAnchor.constraint(equalToConstant: 100).isActive = true
         dialRingView!.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
-        dialRingView!.backgroundColor = UIColor.yellow
+        dialRingView!.backgroundColor = UIColor.clear
         dialRingView!.setImage(image: image)
         
         
@@ -66,7 +66,7 @@ public class CPDialRing: UIView {
         stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
-        self.backgroundColor = .blue
+        self.backgroundColor = .clear
     }
     
     open func setDelegate(delegate: CPDialRingDelegate) {
