@@ -160,7 +160,7 @@ class CPDialRingView: UIView {
             case 1:
                 shutterSpeed = 2000
             case 0:
-                shutterSpeed = 2000
+                shutterSpeed = 1000
             case -1:
                 shutterSpeed = 500
             case -2:
