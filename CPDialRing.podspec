@@ -37,8 +37,8 @@ TODO: Add long description of the pod here.
   # }
   s.resources = 'CPDialRing/Assets.xcassets/**/*.{png,storyboard,json}'
   s.resource_bundles = {
-     'CPDialRing' => ['CPDialRing/Assets.xcassets']
-     
+      'CPDialRing' => ['CPDialRing/Assets.xcassets']
+  }
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
