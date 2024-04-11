@@ -27,8 +27,17 @@ public class CPDialRing: UIView {
     }
     
     private func initView(shutterSpeed: CGFloat) {
-        let bundle = Bundle(for: CPDialRing.self)
-        let image = UIImage(named: "dialring_mask", in: bundle, compatibleWith: nil)!
+        
+        var image: UIImage
+        let podBundle = Bundle(for: CPDialRing.self)
+        if let path = podBundle.path(forResource: "CPDialRing", ofType: "bundle") {
+            let bundle = Bundle(path: path)!
+            image = UIImage(named: "dialring_mask", in: bundle, compatibleWith: nil)!
+        } else {
+            image = UIImage(named: "dialring_mask", in: podBundle, compatibleWith: nil)!
+            
+        }
+        
         
         dialRingView = CPDialRingView(frame: CGRectMake(0, 0, 100, 100))
         dialRingView!.widthAnchor.constraint(equalToConstant: 100).isActive = true
